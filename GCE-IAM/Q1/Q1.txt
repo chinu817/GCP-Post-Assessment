@@ -1,0 +1,42 @@
+Q1
+
+#Creating disk of 10GB
+gcloud compute instances create ubu-chin \
+--image-family ubuntu-1804-lts \
+--image-project ubuntu-os-cloud \
+--machine-type f1-micro \
+--boot-disk-size 10GB
+Created [https://www.googleapis.com/compute/v1/projects/pe-training/zones/us-east1-b/instances/ubu-chin].
+NAME      ZONE        MACHINE_TYPE  PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP     STATUS
+ubu-chin  us-east1-b  f1-micro                   10.142.0.4   35.237.196.112  RUNNING
+
+#Resizing disk to 50GB
+chinmay_kulkarni@cloudshell:~ (pe-training)$ gcloud compute disks resize ubu-chin --size 50 \--zone us-east1-b
+This command increases disk size. This change is not reversible.
+For more information, see:
+https://cloud.google.com/sdk/gcloud/reference/compute/disks/resize
+Do you want to continue (Y/n)?  y
+Updated [https://www.googleapis.com/compute/v1/projects/pe-training/zones/us-east1-b/disks/ubu-chin].
+---
+creationTimestamp: '2020-01-23T09:24:23.640-08:00'
+guestOsFeatures:
+- type: VIRTIO_SCSI_MULTIQUEUE
+id: '2382281381855389736'
+kind: compute#disk
+labelFingerprint: 42WmSpB8rSM=
+lastAttachTimestamp: '2020-01-23T09:24:23.640-08:00'
+licenseCodes:
+- '5926592092274602096'
+licenses:
+- https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/licenses/ubuntu-1804-lts
+name: ubu-chin
+physicalBlockSizeBytes: '4096'
+selfLink: https://www.googleapis.com/compute/v1/projects/pe-training/zones/us-east1-b/disks/ubu-chin
+sizeGb: '50'
+sourceImage: https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-1804-bionic-v20200108
+sourceImageId: '2149003553186487501'
+status: READY
+type: https://www.googleapis.com/compute/v1/projects/pe-training/zones/us-east1-b/diskTypes/pd-standard
+users:
+- https://www.googleapis.com/compute/v1/projects/pe-training/zones/us-east1-b/instances/ubu-chin
+zone: https://www.googleapis.com/compute/v1/projects/pe-training/zones/us-east1-b
