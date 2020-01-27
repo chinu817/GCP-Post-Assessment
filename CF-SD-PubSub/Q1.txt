@@ -1,0 +1,22 @@
+Q1. Steps to export all the logs related to firewall rules to BigQuery for further analysis. Use console. (Only export to BigQuery, analysis not required). (1m)
+
+a.Enable firewall rules logging:
+1. Go to the Firewall rules page in the Google Cloud Console.
+2. Select the firewall rule that you want to update.
+3. Click Edit.
+4. For the Logs setting, select On.
+5. Click Save.
+
+b. Create a sink.
+1. Click Create Export at the top of the Logs Exports page to create Export Sink.
+2. To create a sink, fill in the Edit Export panel as follows.
+3. (filter): Enter an advanced logs query. You don't need quotation marks around the query and you can use multiple lines. 
+The initial query is determined by the log entries being displayed when you click Create Export. Whenever you edit the query, click Submit query to display the matched log entries. 
+Click Jump to newest logs to fetch the most recent logs. If you wish to use the basic viewing interface to select the logs, use the drop-down menu arrow_drop_down in the search-query box.
+4. Sink name: Enter the identifier you want to assign to the sink.
+5. Sink Service: Select a destination service ie BigQuery.
+6. Sink Destination: In BigQuery, Select or create the particular dataset to receive the exported logs. You also have the option to use partitioned tables.
+7. Click Update Sink to create the sink.
+
+
+
