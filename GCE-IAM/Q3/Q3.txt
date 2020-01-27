@@ -1,0 +1,44 @@
+Q3.Create a bucket
+gsutil mb gs://cfirst_bucket/  
+gsutil mb gs://csecond_bucket/
+
+
+a.Transfer file from one bucket to another
+chinmay_kulkarni@cloudshell:~ (pe-training)$ gsutil cp gs://cfirst_bucket/Bucket1.txt/ gs://csecond_bucket/
+Copying gs://cfirst_bucket/Bucket1.txt [Content-Type=text/plain]...
+- [1 files][    7.0 B/    7.0 B]
+Operation completed over 1 objects/7.0 B.
+
+
+b.Transfer a local file from your pc to bucket
+chinmay_kulkarni@cloudshell:~ (pe-training)$ gsutil cp /home/chinmay_kulkarni/chinmay.txt gs://csecond_bucket/
+Copying file:///home/chinmay_kulkarni/chinmay.txt [Content-Type=text/plain]...
+- [1 files][    7.0 B/    7.0 B]
+Operation completed over 1 objects/7.0 B.
+
+
+c.Download a file from bucket to local
+chinmay_kulkarni@cloudshell:~ (pe-training)$ gsutil cp gs://cfirst_bucket/Bucket1.txt/ /home/chinmay_kulkarni
+Copying gs://cfirst_bucket/Bucket1.txt...
+- [1 files][    7.0 B/    7.0 B]
+Operation completed over 1 objects/7.0 B.
+
+
+d.List all the objects in the bucket.
+chinmay_kulkarni@cloudshell:~ (pe-training)$ gsutil ls -r gs://cfirst_bucket/**
+gs://cfirst_bucket/Bucket1.txt
+gs://cfirst_bucket/Links.txt
+gs://cfirst_bucket/csv_code.txt
+
+chinmay_kulkarni@cloudshell:~ (pe-training)$ gsutil ls -r gs://csecond_bucket/**
+gs://csecond_bucket/Bucket2.txt
+gs://csecond_bucket/quantiphi_to_learn.txt
+gs://csecond_bucket/runnig intances.txt
+
+
+e.Delete objects in the bucket
+chinmay_kulkarni@cloudshell:~ (pe-training)$ gsutil rm gs://csecond_bucket/quantiphi_to_learn.txt
+Removing gs://csecond_bucket/quantiphi_to_learn.txt...
+/ [1 objects]
+Operation completed over 1 objects.
+
