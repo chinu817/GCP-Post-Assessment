@@ -1,0 +1,38 @@
+﻿Q1. Create an instance A in default VPC.
+1. In the Console, go to the VM Instances page.
+2. Click Create instance.
+3. In the Boot disk section, click Change to begin configuring your boot disk.
+4. On the OS images tab, choose an image.
+5. Click Select.
+6. Click Create to create the instance.
+
+
+Q2. Launch instance B with only private ip in default VPC in a different zone.
+1. In the Console, go to the VM Instances page.
+2. Click Create instance.
+3. In the Boot disk section, click Change to begin configuring your boot disk.
+4. On the OS images tab, choose an image.
+5. Click Select.
+6. Under Management, security, disks, networking, sole tenancy, go to Networking.
+7. Under Network interfaces, select None from External IP dropdown menu.
+8. Click Create to create the instance.
+
+
+Q3. Configure NAT so instance can access the Internet.
+1. Go to the Cloud NAT page in the Google Cloud Console.
+2. Click Get started or Create NAT gateway.
+4. Enter a Gateway name.
+5. Choose a VPC network.
+6. Set the Region for the NAT gateway.
+7. Select or create a Cloud Router in the region.
+8. Click Logging, minimum ports, timeout to open that section.
+9. Under Stackdriver logging, select the following, Logging for translation info and errors (sends all logs to Stackdriver).
+10. Click Create.
+
+
+Q4. SSH into Instance B using instance A and try to install nginx.
+1. From your first instance do,
+gcloud auth login
+2. Then, you will be given a link, paste that into your browser.
+3. Then login with the account of your second instance.
+4. You will then get a key paste that in your first instance terminal.
