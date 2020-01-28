@@ -1,0 +1,13 @@
+Q1. Host a static website using GCS bucket.
+
+1. Create a bucket.
+2. Upload an '.html' file into it.
+3. Click the more actions menu associated with the object that you want to make public.
+4. Select Edit permissions from the drop-down menu.
+5. In the overlay that appears, click the + Add item button.
+6. Add a permission for allUsers.
+7. Select User for the Entity.
+8. Enter allUsers for the Name.
+9. Select Reader for the Access.
+10. Click Save.
+11. Open the visible Pulic Link for your object in a new window.
